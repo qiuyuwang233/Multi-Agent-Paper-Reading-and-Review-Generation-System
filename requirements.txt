@@ -1,0 +1,28 @@
+# ===== 多 Agent 论文阅读与综述生成系统 依赖清单 =====
+# 运行环境: Python 3.9+（推荐 3.10+）, Windows
+
+# --- LLM 与编排 ---
+openai>=1.30                # DeepSeek OpenAI 兼容接口客户端
+langgraph>=0.2              # 图编排: Planner-Executor-Critic 环路
+langchain-core>=0.3         # 消息/工具基础抽象
+
+# --- 配置管理 ---
+pydantic>=2.0              # 结构化数据模型
+pydantic-settings>=2.0     # .env 配置加载
+python-dotenv>=1.0         # 环境变量加载
+
+# --- PDF 解析与表格抽取 ---
+pymupdf>=1.24              # PDF 文本/章节解析 (import fitz)
+pdfplumber>=0.11           # 表格抽取与版面文本
+
+# --- 向量检索 ---
+numpy>=1.21                # 向量运算与本地降级检索
+chromadb>=0.5              # Chroma 本地持久化向量库
+# 可选: API Embedding 不可用时的本地降级模型
+sentence-transformers>=2.2 # BAAI/bge-small-zh-v1.5 等本地 Embedding 模型
+
+# --- API 与在线论文拉取 ---
+fastapi>=0.110             # Web API 服务
+uvicorn[standard]>=0.29    # FastAPI 运行服务器
+python-multipart>=0.0.9    # FastAPI 文件上传支持
+requests>=2.31             # arXiv PDF 下载

@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+"""中文提示词模板包。"""
+
+from .templates import CRITIC_SYSTEM_PROMPT, READER_SYSTEM_PROMPT, WRITER_SYSTEM_PROMPT
+
+__all__ = ["READER_SYSTEM_PROMPT", "WRITER_SYSTEM_PROMPT", "CRITIC_SYSTEM_PROMPT"]
